@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10172b" />
+    <meta
+      name="description"
+      content="Watch a smooth golden pendulum swing from side to side. Pause or resume this free, calming pendulum animation on desktop or mobile."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Free Online Pendulum Animation | A Little Moment of Calm" />
+    <meta
+      property="og:description"
+      content="Watch a smooth golden pendulum swing from side to side. Pause or resume this free, calming animation."
+    />
+    <meta name="twitter:card" content="summary" />
+    <title>Free Online Pendulum Animation | A Little Moment of Calm</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="scene" id="scene">
+      <header>
+        <p class="eyebrow">Take a breath</p>
+        <h1>A little moment of calm</h1>
+        <p class="subtitle">Watch a golden pendulum swing gently from side to side.</p>
+      </header>
+
+      <div class="stage" role="img" aria-label="A golden ball swinging gently from side to side like a pendulum">
+        <div class="pivot" aria-hidden="true"></div>
+        <div class="pendulum" aria-hidden="true">
+          <div class="rope"></div>
+          <div class="ball"></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="toggle" type="button" aria-pressed="false">Pause the swing</button>
+        <p class="hint">A gentle swing, back and forth.</p>
+      </div>
+
+      <p class="description">
+        This free online pendulum animation creates a calm, gentle motion. Use the button to pause
+        or resume the swinging ball on any screen.
+      </p>
+    </main>
+    <script>
+      const scene = document.getElementById("scene");
+      const toggle = document.getElementById("toggle");
+
+      toggle.addEventListener("click", () => {
+        const isPaused = scene.classList.toggle("paused");
+        toggle.textContent = isPaused ? "Resume the swing" : "Pause the swing";
+        toggle.setAttribute("aria-pressed", String(isPaused));
+      });
+    </script>
+  </body>
+</html>
